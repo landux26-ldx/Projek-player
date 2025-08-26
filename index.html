@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Landux TV — Player</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- hls.js for HLS playback on browsers that don't support native HLS -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+</head>
+<body>
+  <header class="app-bar">
+    <button id="menuBtn" class="icon-btn" aria-label="menu">☰</button>
+    <div class="title">Landux TV</div>
+    <div class="actions">
+      <button id="settingsBtn" class="icon-btn" aria-label="settings">⚙</button>
+    </div>
+  </header>
+
+  <main class="content">
+    <!-- Search / filter -->
+    <div class="search-row">
+      <input id="searchInput" type="search" placeholder="Cari channel..." />
+    </div>
+
+    <!-- Grid of channels -->
+    <section id="channelsGrid" class="grid"></section>
+
+    <!-- Floating Add Channel -->
+    <button id="fabAdd" class="fab" title="Tambah channel">＋</button>
+  </main>
+
+  <!-- Player Overlay -->
+  <div id="playerOverlay" class="overlay hidden" aria-hidden="true">
+    <div class="player-card">
+      <div class="player-header">
+        <div id="playerTitle">Channel</div>
+        <button id="closePlayer" class="icon-btn">✕</button>
+      </div>
+      <div class="video-wrap">
+      <!-- Video player untuk .m3u8 -->
+      <video id="video" playsinline controls></video>
+      <!-- Iframe player untuk embed -->
+      <iframe id="iframePlayer" class="hidden" allowfullscreen></iframe>
+    </div>
+      <div class="player-controls">
+        <button id="popoutBtn" class="btn btno">Buka di Tab</button>
+        <button id="pipBtn" class="btn btno">PiP</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Drawer (Settings & M3U input & Add channel) -->
+  <aside id="drawer" class="drawer hidden" aria-hidden="true">
+    <div class="drawer-header">
+      <h3>Pengaturan & Playlist</h3>
+      <button id="closeDrawer" class="icon-btn">✕</button>
+    </div>
+
+    <div class="drawer-section">
+      <label class="label">Theme</label>
+      <div class="row">
+        <button id="themeToggle" class="btn btno">Toggle Dark</button>
+      </div>
+    </div>
+
+    <div class="drawer-section">
+      <label class="label">Masukkan URL M3U (atau paste isi .m3u)</label>
+      <textarea id="m3uInput" rows="6" placeholder="Paste M3U content atau URL .m3u di sini"></textarea>
+      <div class="row">
+        <button id="loadM3U" class="btn primary">Load M3U</button>
+        <button id="clearPlaylist" class="btn">Bersihkan</button>
+      </div>
+
+
+    <div class="drawer-section">
+      <label class="label">Tambah Channel Manual</label>
+      <input id="manualName" type="text" placeholder="Nama channel" />
+      <input id="manualUrl" type="text" placeholder="URL stream (.m3u8)" />
+      <input id="manualLogo" type="text" placeholder="Logo URL (opsional)" />
+      <div class="row">
+        <button id="addManual" class="btn primary">Tambah</button>
+      </div>
+    </div>
+
+    <div class="drawer-section small muted">
+      <div>Nikmati Nonton Streaming Live Cuman Di LanduxTV</div>
+    </div>
+  </aside>
+
+  <!-- Minimal footer -->
+  <footer class="footer muted">
+    Landux TV • 2025©
+  </footer>
+
+  <!-- JS -->
+  <script src="js/app.js" defer></script>
+</body>
+  </html>
+  

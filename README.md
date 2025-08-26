@@ -20,7 +20,7 @@ Bisa digunakan untuk **nonton streaming TV online gratis** langsung dari browser
 ## 📺 Preview
 Tampilan halaman utama:  
 
-![Preview](https://github.com/landux26-ldx/Projek-player/raw/main/screenshot.jpg)
+![Preview](https://raw.githubusercontent.com/landux26-ldx/Projek-player/refs/heads/main/20250826_202927.png)
 
 ---
 
